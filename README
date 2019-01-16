@@ -1,0 +1,7 @@
+CAMBIOS REALIZADOS
+02-01-2019
+    - clientes.php: agregadas lineas 106-107
+    - views/factura_normal.php y factura_servicio.php: Arreglado reemplazo de simbolos "-" y "." en nombre pdf
+    - views/listado_servicios.php: arreglado facturacion para meses mayores al ultimo facturado
+
+TODO:

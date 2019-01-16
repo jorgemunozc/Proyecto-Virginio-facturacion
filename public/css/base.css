@@ -1,0 +1,21 @@
+:root {
+    --primary-color: #1B2845;
+    --secondary-color: #fff;
+    --primary-lighter: #65afff;
+    --secondary-darker: rgb(248, 248, 248);
+    --error-bg-color: #c94c4c;
+    --success-bg-color: #5b9aa0;    
+}
+
+*, *:before, *:after {
+    box-sizing: border-box;
+  }
+  
+body {
+    display: flex;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
