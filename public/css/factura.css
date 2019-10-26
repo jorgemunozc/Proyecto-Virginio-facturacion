@@ -1,0 +1,206 @@
+@import 'base.css';
+
+/* common */
+*, *::after, *::before {
+    box-sizing: border-box; 
+}
+
+.btn {
+    background-color: var(--primary-lighter);
+    border: 1px solid var(--secondary-color);
+    border-radius: 30px;
+    color: var(--secondary-color);
+    height: 2em;
+    text-decoration: none;
+    padding: .5em;
+    order: 2;
+}
+
+.btn:hover {
+    background-color: var(--secondary-color);
+    border: 1px solid var(--primary-lighter);
+    color: var(--primary-lighter);
+    cursor: pointer;
+}
+
+body {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    margin: 10px 0;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* table styles */
+.table { 
+    display: flex;
+    flex-direction: column;
+    border: 2px solid black;
+}
+
+.row {
+    display: flex;
+}
+
+.cell {
+    display: flex;
+    flex: 1 0 calc(100%/12);
+    flex-direction: column;
+    /* align-items: center; */
+    /* border: 1px solid yellow; */
+}
+
+.cell--bolder {font-weight: 700;}
+
+
+.header {
+    font-weight: 700;
+    border: 2px solid black;
+    background-color: rgb(192,192,192)
+}
+
+.descripcion {flex-grow: 8;}
+
+.cell > .row {display: flex;}
+
+
+#factura {
+    height: 279.4mm;
+    width: 215.9mm;
+    padding: 2em;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+
+
+/* HEADER STYLES*/
+.heading {
+    display: flex;
+    justify-content: space-between;
+    height: calc(100%/5)
+}
+
+/* SERVICIO */
+.servicio {
+    height: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+    text-align: center;
+    font-size: .75rem;
+    width: 50%;
+    align-items: flex-start;
+    padding: .5em 2em;
+}
+
+.servicio__logo{flex: 1 1 40%;}
+
+.servicio__logo img {
+    width: auto;
+    max-height: 100px;
+}
+
+.servicio__datos{
+    flex: 1 0 60%;
+    font-size: 12px;
+    flex-grow: 3;
+    text-align: left;
+}
+.servicio__titulo{
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.servicio__subtitulo, 
+.servicio__h3 {font-style: oblique;}
+
+
+
+/* Timbre styles */
+.timbre {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    border: 3px solid red;
+    color: red;
+    text-align: center;
+    padding: 1em;
+    width: 100%;
+    height: 90%;
+    text-transform: uppercase;
+}
+
+.wrapper-timbre{
+    text-align: center;
+    width: 40%;
+}
+
+
+
+
+
+/* CLIENTE */
+.cliente {
+    height: calc(100%/5);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+
+
+
+
+/* CUERPO FACTURA*/
+.cuerpo-factura {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    background-color: rgb(224, 224, 224);
+    justify-content: space-between;
+}
+
+.cuerpo-factura .row{padding: .25em .5em;}
+
+
+.total-en-nro {
+    text-transform: uppercase;
+    flex-grow: 3;
+    padding: 0 .25em;
+}
+
+
+/* ESTILOS FOOTER */
+.footer {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: .75rem;
+}
+
+.leyenda {
+    text-align: center;
+    width: 100%;
+}
+
+.codigo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.codigo figcaption {
+    width: 100%;
+    text-align: center;
+}
+.codigo img {
+    max-height: 80px;
+    width: auto;
+}
+
+/* MISC */
+.txt--right {text-align: right;}

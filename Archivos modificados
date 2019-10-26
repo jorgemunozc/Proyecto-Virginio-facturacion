@@ -1,0 +1,19 @@
+#Agregar funcion para crear servicios exentos de IVA
+
+-views/servicio/servicio_form_view.php
+-views/servicio/lista_servicios_view.php
+-views/servicio/edit_form.php
+-controllers/servicios.php
+-models/servicio_model.php
+
+#Agregar funcion para rango de cobros especificos para cade servicio dependiendo del cliente
+-views/tarifa/nueva_tarifa_form.php
+-views/tarifa/lista_tarifas.php
+-model/tarifa_model.php
+-controllers/tarifas.php
+
+
+#Agregar logica facturas exentas de iva
+views/pdf/factura_normal.php
+-models/servicio_model.php
+-controllers/facturas.php

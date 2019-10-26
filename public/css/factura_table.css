@@ -1,0 +1,132 @@
+@import 'base.css';
+
+/* common */
+*, *::after, *::before {
+    box-sizing: border-box; 
+}
+
+#factura {
+    width: 100%;
+    border: 1px solid rgb(245, 237, 237);
+}
+
+
+
+
+/* ESTILOS HEADER*/
+.heading {
+    height: calc(100%/5);
+    width: 100%;
+}
+
+
+/* ESTILOS SERVICIO */
+.servicio {
+    width: 70%;
+    height: 100%;
+    text-align: center;
+    font-size: .75rem;
+    padding: .5em 2em;
+}
+
+.servicio__datos {
+    font-size: 12px;
+    text-align: left;
+}
+
+.servicio__logo {
+    max-height: 100px;
+    width: auto;
+}
+
+.servicio__titulo{
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.servicio__subtitulo, 
+.servicio__h3 {font-style: oblique;}
+
+
+
+
+/* Timbre styles */
+.timbre {
+    border: 3px solid red;
+    color: red;
+    text-align: center;
+    padding: 1em;
+    width: 100%;
+    height: 90%;
+    text-transform: uppercase;
+}
+
+.wrapper-timbre{
+    text-align: center;
+    width: 40%;
+}
+
+
+
+
+
+/* ESTILOS CLIENTE */
+.cliente {
+    border: 1px solid red;
+    height: calc(100%/5);
+    width: 100%;
+}
+
+
+
+
+/* CUERPO FACTURA*/
+.cuerpo-factura {
+    height: calc(100%/5*2);
+    background-color: rgb(224, 224, 224);
+}
+
+.cuerpo-factura .row{padding: .25em .5em;}
+
+.total-en-nro {
+    text-transform: uppercase;
+    flex-grow: 3;
+    padding: 0 .25rem;
+    font-size: .75em;
+    text-align: center;
+}
+
+
+
+
+
+/* ESTILOS FOOTER */
+.footer {
+    font-size: .75rem;
+    height: calc(100%/5);
+}
+
+.leyenda {
+    text-align: center;
+    width: 100%;
+}
+
+.codigo {
+}
+
+.codigo figcaption {
+    width: 100%;
+    text-align: center;
+}
+
+.codigo img {
+    max-height: 80px;
+    width: auto;
+}
+
+
+
+
+
+/* MISC */
+.txt--right {text-align: right;}

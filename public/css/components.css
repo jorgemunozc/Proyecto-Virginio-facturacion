@@ -1,0 +1,68 @@
+
+/* BUTTON STYLES */
+.btn {
+    text-decoration: none;
+    background-color: var(--primary-lighter);
+    border: 1px solid var(--secondary-color);
+    padding: .35rem;
+    margin: .5rem 0;
+    border-radius: 30px;
+    color: var(--secondary-color);
+    min-width: 5rem;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+.btn:hover {
+    cursor: pointer;
+    background-color: var(--secondary-color);
+    border: 1px solid var(--primary-lighter);
+    color: var(--primary-lighter);
+}
+
+.btn--red {
+    background-color: red;
+    border: 1px solid var(--secondary-color);
+    color: var(--secondary-color);
+}
+
+.btn--red:hover {
+    background-color: var(--secondary-color);
+    border: 1px solid red;
+    color: red;
+}
+
+.btn--xsmall {
+    max-width: 1.5rem;
+    min-width: 1.5rem;
+    padding: .1rem .25rem;
+    margin: 0 .25rem;
+}
+
+.btn--small {
+    min-width: 1rem;
+    max-width: 5rem;
+    padding: .05rem .5rem;
+}
+
+.btn--md {
+    min-width: 3rem;
+    max-width: 8rem;
+    font-size: .75rem;
+}
+
+.btn--square {
+    border-radius: 0;
+}
+/* END BUTTON STYLES */
+
+.leyenda {
+    font-size: .6rem;
+    font-weight: 700;
+}
+
+.required {
+    color: red;
+    font-size: .85rem;
+}

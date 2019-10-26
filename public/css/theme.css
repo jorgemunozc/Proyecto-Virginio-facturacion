@@ -1,0 +1,92 @@
+@import 'normalize.css';
+@import 'base.css';
+@import 'navbar.css';
+@import 'table.css';
+@import 'form.css';
+@import 'components.css';
+
+.hidden {display: none;}
+
+.visible {display:inherit;}
+
+.main-content {
+    width: 80%;
+    margin: 0 auto;
+    padding: 1em;
+    height: 100%;
+    overflow-y: scroll;
+    /* display: flex;
+    flex-wrap: wrap;
+    flex-flow: column;
+    align-items: flex-start; */
+}
+
+/* Servicios tab */
+
+/* Facturaciones tab */
+.clientes-option {
+    width: 100%;
+}
+
+/* Tarifas  */
+.info-empresa {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+/* Logos */
+.logo-wrapper {
+    display: flex;
+}
+
+.logo {
+    width: 100%;
+    margin: 1em auto;
+}
+
+.logo img {
+    max-height: 120px;
+    width: auto;
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Login view */
+.login-wrapper {
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+.login-wrapper .header {
+    white-space: pre-line;
+    margin: 1em auto;
+    max-width: 80%;
+    text-align: center;
+}
+
+
+/* BOtones +/- */
+.controles {
+    display: flex;
+    justify-content: flex-start;
+    margin: 0;
+    padding: 0;
+}
+
+/* MENSAJES */
+.error,
+.success {
+    width: 70%;
+    margin: 0 auto;
+    padding: .5rem;
+    color: white;
+    text-align: center;
+    font: 1.25em;
+}
+
+.success {background-color: var(--success-bg-color);}
+
+.error {background-color: var(--error-bg-color);}

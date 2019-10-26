@@ -1,0 +1,269 @@
+@import 'base.css';
+
+/* common */
+*,
+*::after, 
+*::before {
+    box-sizing: border-box; 
+}
+
+.btn {
+    text-decoration: none;
+    height: 2em;
+    background-color: var(--primary-lighter);
+    border: 1px solid var(--secondary-color);
+    order: 2;
+    padding: .5em;
+    border-radius: 30px;
+    color: var(--secondary-color);
+}
+
+.btn:hover {
+    cursor: pointer;
+    background-color: var(--secondary-color);
+    border: 1px solid var(--primary-lighter);
+    color: var(--primary-lighter);
+}
+
+body {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    margin: 10px 0;
+    justify-content: center;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+}
+
+/* FACTURA */
+#factura {
+    height: 279.4mm;
+    width: 215.9mm;
+    padding: 2em;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* table styles */
+.table { 
+    display: flex;
+    flex-direction: column;
+}
+
+.row { display: flex;}
+
+.cell {
+    display: flex;
+    flex: 1 0 calc(100%/12);
+    flex-direction: column;
+}
+
+.cell--bolder {font-weight: 700;}
+
+.header {
+    font-weight: 700;
+    color: white;
+    background-color: var(--primary-color);
+}
+
+.descripcion {flex-grow: 8;}
+
+.cell > .row {display: flex;}
+
+
+
+
+
+/* HEADER STYLES*/
+.heading {
+    display: flex;
+    justify-content: space-between;
+    height: calc(100%/5)
+}
+
+
+
+
+
+/* SERVICIO */
+.servicio {
+    height: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+    text-align: center;
+    font-size: .75rem;
+    width: 50%;
+    align-items: flex-start;
+    padding: .5em 2em;
+}
+
+.servicio__logo{flex: 1 1 40%;}
+
+.servicio__logo img {
+    width: auto;
+    max-height: 100px;
+}
+
+.servicio__datos{
+    flex: 1 0 60%;
+    font-size: 12px;
+    flex-grow: 3;
+    text-align: left;
+}
+.servicio__titulo{
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.servicio__subtitulo, 
+.servicio__h3 {font-style: oblique;}
+
+
+
+/* Timbre styles */
+.timbre {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    border: 3px solid red;
+    color: red;
+    text-align: center;
+    padding: 1em;
+    width: 100%;
+    height: 90%;
+    text-transform: uppercase;
+}
+
+.wrapper-timbre {
+    text-align: center;
+    width: 40%;
+}
+
+
+
+
+
+/* CLIENTE */
+.cliente {
+    height: calc(100%/5);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+
+
+
+
+/* CUERPO FACTURA*/
+.cuerpo-factura {
+    display: flex;
+    /* flex-direction: column; */
+    height: calc(100%/5*2);
+    background-color: rgb(224, 224, 224);
+    justify-content: space-between;
+}
+
+.cuerpo-factura .row{padding: .25em .5em;}
+
+.total-en-nro {
+    text-transform: uppercase;
+    flex-grow: 3;
+    padding: 0 .25rem;
+    font-size: .75em;
+    text-align: center;
+}
+
+
+
+
+
+/* ESTILOS FOOTER */
+.footer {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: .75rem;
+}
+
+.leyenda {
+    text-align: center;
+    width: 100%;
+}
+
+.codigo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.codigo figcaption {
+    width: 100%;
+    text-align: center;
+}
+
+.codigo img {
+    max-height: 80px;
+    width: auto;
+}
+
+
+
+
+/* MISC */
+
+.a-pagar {
+    background-color: #fff;
+    margin: .25em;
+}
+
+.left {
+    margin-right: 1em;
+}
+
+.right {
+    margin-left: 1em;
+}
+
+.col {
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+}
+
+.lecturas {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.detalles, .desglose {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.txt--right {text-align: right;}
+
+.txt--bigger {font-size: 1.15rem;}
+
+.grafico {
+    max-width: 200px;
+    height: auto;
+}
+
+.nro-cli {
+    font-size: 1.15rem;
+    border: 1px solid #000;
+}
+
+.nro-cli .row .cell{
+    padding: .5rem;
+}
+
+.bg--primary-color {background-color: var(--primary-color);}
+
+.txt--white {color:white;}
