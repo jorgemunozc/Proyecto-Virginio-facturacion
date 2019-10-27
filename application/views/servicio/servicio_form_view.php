@@ -31,7 +31,6 @@
         </div>
         <div class="form__field">
             <label class="form__label" for="">Logo Servicio</label>
-<<<<<<< HEAD
             <input class="form__input" type="file" name="logo" accept=".png" required>
             <span class="leyenda">Peso máx: 1024KB</span>
         </div>
@@ -41,12 +40,6 @@
             </div>
         </div>
         <div class="form__field">
-=======
-            <input class="form__input" type="file" name="logo" accept=".png, .svg" required>
-            <span class="leyenda">Peso máx: 1024KB</span>
-        </div>
-        <div class="form__field">
->>>>>>> 16052615bcbda34153f7eed10fd873ae7bdc35ea
             <fieldset>
                 <legend>Detalle Factura</legend>
                 <div class="table">

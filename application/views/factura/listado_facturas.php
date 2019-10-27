@@ -14,18 +14,10 @@
             <div class="table__row"><div class="table__cell">Sin Facturas.</div></div>
             <?php endif;?>
         <?php foreach($facturas[$cliente->rut] as $factura): ?>
-<<<<<<< HEAD
         <div class="table__row">
             <div class="table__cell"><?php echo $factura->servicio__tipo_servicio;?></div>
             <div class="table__cell"><?php echo $factura->folio;?></div>
             <div class="table__cell"><?php printf('%02d/%02d/%4d', $factura->dia_emision, $factura->mes_emision, $factura->anio_emision);?></div>
-=======
-            <?php $fecha_emision = $factura->dia_emision."/".$factura->mes_emision."/".$factura->anio_emision;?>
-        <div class="table__row">
-            <div class="table__cell"><?php echo $factura->servicio__tipo_servicio;?></div>
-            <div class="table__cell"><?php echo $factura->folio;?></div>
-            <div class="table__cell"><?php echo $fecha_emision;?></div>
->>>>>>> 16052615bcbda34153f7eed10fd873ae7bdc35ea
             <div class="table__cell"><?php echo number_format($factura->neto);?></div>
             <div class="table__cell"><?php echo number_format($factura->iva);?></div>
             <div class="table__cell"><?php echo number_format($factura->total);?></div>

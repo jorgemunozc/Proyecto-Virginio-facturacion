@@ -148,14 +148,9 @@
                                         'neto'          => $neto_fac,
                                         'iva'           => $iva_fac,
                                         'total'         => $total_fac,
-<<<<<<< HEAD
                                         'tipo_servicio' => $tipo_servicio,
                                         'rut_cliente'   => $rut_cli,
                                         'exento'        => $monto_exento
-=======
-                                        'tipo_servicio' => $servicio,
-                                        'rut_cliente'   => $rut_cli
->>>>>>> 16052615bcbda34153f7eed10fd873ae7bdc35ea
                                 );
                 $this->load->model('factura_model');
                 foreach($datos_factura as $campo => $valor)

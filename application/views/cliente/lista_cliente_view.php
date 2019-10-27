@@ -29,10 +29,6 @@
             <div class="table__cell"><a class="btn btn--md" href="<?php echo base_url().'tarifas/info/'.$cliente->rut;?>">Ver servicios</a></div>
         </div>
         <?php endforeach;?>
-<<<<<<< HEAD
-=======
-        <!-- <?php phpinfo();?> -->
->>>>>>> 16052615bcbda34153f7eed10fd873ae7bdc35ea
     </div>
 
     <div class="">

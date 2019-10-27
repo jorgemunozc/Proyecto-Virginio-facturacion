@@ -11,7 +11,6 @@
         <option value="0">No hay servicios disponibles</option>
         <?php endif;?>
         </select>
-<<<<<<< HEAD
         <div class="form__field">
             <label for="">Monto a cobrar</label>
             <input type="number" name="monto_tarifa" id="monto_tarifa" min="1" required>
@@ -20,9 +19,6 @@
             <label for="">Variabilidad de cobro específica</label>
             <input type="number" name="rango_cobros" id="rango_cobros" min="0" max="100">
         </div>
-=======
-        <label for="">Monto a cobrar</label><input type="number" name="monto_tarifa" id="monto_tarifa" min="1" required>
->>>>>>> 16052615bcbda34153f7eed10fd873ae7bdc35ea
     </div>
     <button class="btn">Guardar</button>
 </form>

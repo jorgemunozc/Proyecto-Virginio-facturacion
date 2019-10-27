@@ -5,11 +5,7 @@
     </div>
 <?php if(isset($servicio)):?>
 <div class="logo"><img src="<?php echo base_url().'/public/images/'.$servicio->url_logo?>" alt="Logo <?php echo $servicio->tipo_servicio;?>"></div>
-<<<<<<< HEAD
 <form id="editServicioData" class="form" method="post" action="<?php echo base_url().'servicios/editar_servicio';?>">
-=======
-<form id="editServicioData" class="form" action="<?php echo base_url().'servicios/editar_servicio';?>">
->>>>>>> 16052615bcbda34153f7eed10fd873ae7bdc35ea
     <div class="form__field">
         <label class="form__label" for="">Tipo Servicio</label>
         <input class="form__input" type="text" name="tipo_servicio" value="<?php echo $servicio->tipo_servicio;?>" required>
@@ -40,29 +36,20 @@
         <input class="form__input" type="text" name="fono" value="<?php echo $servicio->fono;?>" required>
     </div>
     <div class="form__field">
-<<<<<<< HEAD
             <div>
                 <input type="checkbox" name="exento" id="exento" checked="<?php echo $servicio->exento == 1? "true" : "false"?>"><label for="exento">Servicio exento de impuesto</label>
             </div>
     </div>
     <div class="form__field">
-=======
->>>>>>> 16052615bcbda34153f7eed10fd873ae7bdc35ea
         <button class="btn">Actualizar Datos</button>
     </div>
     <div class="form__field required">
         <span>*Campos requeridos.</span>
     </div>
 </form>
-<<<<<<< HEAD
 <form id="editServicioLogo" class="form" method="post" action="<?php echo base_url().'servicios/editar_logo'?>" enctype="multipart/form-data">
     <input type="hidden" name="tipo_servicio" value="<?php echo $servicio->tipo_servicio;?>">
     <input class="form__input" type="file" name="logo" accept=".png" required>
-=======
-<form id="editServicioLogo" class="form" action="<?php echo base_url().'servicios/editar_logo'?>" enctype="multipart/form-data">
-    <input type="hidden" name="tipo_servicio" value="<?php echo $servicio->tipo_servicio;?>">
-    <input class="form__input" type="file" name="logo" accept=".png, .svg" required>
->>>>>>> 16052615bcbda34153f7eed10fd873ae7bdc35ea
     <span class="leyenda">Peso máx: 1024KB</span>
     <button class="btn">Actualizar Logo</button>
 </form>

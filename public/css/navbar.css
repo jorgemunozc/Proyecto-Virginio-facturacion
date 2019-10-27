@@ -1,8 +1,4 @@
 .navbar {
-<<<<<<< HEAD
-=======
-    position: relative;
->>>>>>> 16052615bcbda34153f7eed10fd873ae7bdc35ea
     display: flex;
     height: 100%;
     background-color: var(--primary-color);
@@ -45,11 +41,7 @@
     position: absolute;
     bottom: 10%;
     left: 0;
-<<<<<<< HEAD
     width: 20%;
-=======
-    width: 100%;
->>>>>>> 16052615bcbda34153f7eed10fd873ae7bdc35ea
     border-top: 2px solid var(--secondary-color);
 }
 
@@ -65,18 +57,4 @@
 
 .navbar__link--bg-red:hover {
     background-color: maroon;
-<<<<<<< HEAD
-=======
-}
-
-.copyright {
-    display: flex;
-    flex-direction: column;
-    font-size: .6rem;
-    position: absolute;
-    bottom: 1px;
-    left: 1px;
-   align-items: center;
-    width: 100%;
->>>>>>> 16052615bcbda34153f7eed10fd873ae7bdc35ea
 }

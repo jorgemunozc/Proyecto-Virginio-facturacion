@@ -8,18 +8,11 @@
 		public $comuna;
 		public $fono;
         public $url_logo;
-<<<<<<< HEAD
         public $exento = 0;
 
         private $_campos = array('tipo_servicio', 'razon_social', 'rut',
                                     'giro', 'direccion', 'comuna', 
                                     'fono', 'url_logo', 'exento');
-=======
-
-        private $_campos = array('tipo_servicio', 'razon_social', 'rut',
-                                    'giro', 'direccion', 'comuna', 
-                                    'fono', 'url_logo');
->>>>>>> 16052615bcbda34153f7eed10fd873ae7bdc35ea
 		//SETTERS & GETTERS
 
         /*
@@ -31,10 +24,7 @@
         {
             if(isset($property_name) && isset($value))
             {
-<<<<<<< HEAD
                 json_encode("Valor recibido: ${value}");
-=======
->>>>>>> 16052615bcbda34153f7eed10fd873ae7bdc35ea
                 switch ($property_name) 
                 {
                 	case 'tipo_servicio':
@@ -61,7 +51,6 @@
                     case 'url_logo':
                         $this->url_logo = $value;
                         break;
-<<<<<<< HEAD
                     case 'exento':
                         if (is_string($value) && $value === 'on'){
                             $this->exento = 1;
@@ -70,8 +59,6 @@
                             $this->exento = $value;
                         }
                         break;
-=======
->>>>>>> 16052615bcbda34153f7eed10fd873ae7bdc35ea
                     default:
                         return 404;
                 }
@@ -103,11 +90,8 @@
                         return $this->fono;
                     case 'url_logo':
                         return $this->url_logo;
-<<<<<<< HEAD
                     case 'exento':
                         return $this->exento;
-=======
->>>>>>> 16052615bcbda34153f7eed10fd873ae7bdc35ea
                     default:
                         return NULL;
                 }
@@ -161,12 +145,8 @@
                                     'giro'          =>  $this->giro,
                                     'direccion'     =>  $this->direccion,
                                     'comuna'        =>  $this->comuna,
-<<<<<<< HEAD
                                     'fono'          =>  $this->fono,
                                     'exento'        =>  $this->exento
-=======
-                                    'fono'          =>  $this->fono
->>>>>>> 16052615bcbda34153f7eed10fd873ae7bdc35ea
                             );
             $this->db   ->set($campos)
                         ->where('tipo_servicio', $servicio)
@@ -205,12 +185,8 @@
                                     'direccion',
                                     'comuna',
                                     'fono',
-<<<<<<< HEAD
                                     'url_logo',
                                     'exento'
-=======
-                                    'url_logo'
->>>>>>> 16052615bcbda34153f7eed10fd873ae7bdc35ea
             );
             if(in_array($campo, $posibles_campos))
             {
@@ -232,7 +208,6 @@
             }
             return null;
         }
-<<<<<<< HEAD
 
         private function _eliminar_servicio($tipo_servicio)
         {
@@ -267,7 +242,5 @@
         {
             return $this->_eliminar_servicio($tipo_servicio);
         }
-=======
->>>>>>> 16052615bcbda34153f7eed10fd873ae7bdc35ea
 	}
 ?>

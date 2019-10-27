@@ -9,12 +9,5 @@
         <li class="navbar__link"><a href="<?php echo base_url();?>facturas/listar_facturaciones">Facturación</a></li>
         <li class="navbar__link"><a href="<?php echo base_url();?>facturas/listar_facturas">Historial facturas</a></li>
         <li class="navbar__link navbar__link--bg-red logout"><a href="<?php echo base_url();?>login/logout">Cerrar Sesión</a></li>
-<<<<<<< HEAD
-=======
-        <div class="copyright">
-            <span>Developed by Jorge Muñoz &copy;</span>
-            <span>jm.carrasco0520@gmail.com</span>
-        </div>
->>>>>>> 16052615bcbda34153f7eed10fd873ae7bdc35ea
     </ul>
 </aside>

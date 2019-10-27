@@ -9,15 +9,12 @@
     //parsing tipo_servicio
     $tipo_servicio = $datos_factura->servicio__tipo_servicio;
     $tipo_servicio = str_replace(" ", "-", $tipo_servicio);
-<<<<<<< HEAD
     //Determinando si es o no factura exenta
     $tipo_factura = "Factura Electrónica";
     if ($datos_servicio->exento == 1)
     {
         $tipo_factura = "Factura Exenta Electrónica";
     }
-=======
->>>>>>> 16052615bcbda34153f7eed10fd873ae7bdc35ea
 
 ?>
 <!DOCTYPE html>
@@ -53,11 +50,7 @@
             <div class="wrapper-timbre">
                 <div class="timbre">
                     <div class="timbre__rut">R.U.T.: <?php echo $datos_servicio->rut;?></div>
-<<<<<<< HEAD
                     <div class="timbre__titulo-doc"><?php echo $tipo_factura;?></div>
-=======
-                    <div class="timbre__titulo-doc">Factura electronica</div>
->>>>>>> 16052615bcbda34153f7eed10fd873ae7bdc35ea
                     <div class="timbre__folio">N° <?php printf("%05d", $datos_factura->folio);?></div>
                 </div>
                 <div class="sii">S.S.I.I. - CHILE</div>
@@ -154,13 +147,8 @@
                         <?php 
                         if(! empty($config_fac->cantidades[$i]) OR ((int)$config_fac->cantidades[$i] != 0))
                         {
-<<<<<<< HEAD
                             $prec_total = (float)$datos_factura->neto*(float)$config_fac->porcen_del_valor_total[$i]/100;    
                             $prec_unit = $prec_total/(float)$config_fac->cantidades[$i];
-=======
-                            $prec_total = (float)$config_fac->neto*(float)$config_fac->porcen_del_valor_total[$i]/100;    
-                            $prec_unit = $precio_total/(float)$config_fac->cantidades[$i];
->>>>>>> 16052615bcbda34153f7eed10fd873ae7bdc35ea
                             echo number_format($prec_unit);
                         }
                         ?>
@@ -185,13 +173,10 @@
                         <div class="cell txt--right"><?php echo number_format($datos_factura->neto);?></div>
                     </div>
                     <div class="row">
-<<<<<<< HEAD
                         <div class="cell cell--bolder">Exento</div>
                         <div class="cell txt--right"><?php echo number_format($datos_factura->exento);?></div>
                     </div>
                     <div class="row">
-=======
->>>>>>> 16052615bcbda34153f7eed10fd873ae7bdc35ea
                         <div class="cell cell--bolder">IVA</div>
                         <div class="cell txt--right"><?php echo number_format($datos_factura->iva);?></div>
                     </div>

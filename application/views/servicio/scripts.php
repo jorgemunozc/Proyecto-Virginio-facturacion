@@ -1,6 +1,5 @@
 <script>
     $(document).ready(function (){
-<<<<<<< HEAD
         $('.delete-btn').click(function (e){
             e.preventDefault();
             $.ajax({
@@ -20,8 +19,6 @@
             });
         });
 
-=======
->>>>>>> 16052615bcbda34153f7eed10fd873ae7bdc35ea
         $('#editServicioData').submit(function (e){
             e.preventDefault();
             $.ajax({
