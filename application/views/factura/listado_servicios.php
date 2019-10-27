@@ -28,7 +28,11 @@ $anio_act = date('Y');
                         echo "\t<div class='table__cell'><a class='btn btn--small' data-rut='${rut_cliente}' data-servicio='${serv_contratado}' href=''>Facturar</a></div>\n";
                     }else
                     {
+<<<<<<< HEAD
                         printf("\t<div class='table__cell'>%02d-%4d</div>\n", $facturaciones[$rut_cliente][$serv_contratado]['mes'], $facturaciones[$rut_cliente][$serv_contratado]['anio']);
+=======
+                        echo "\t<div class='table__cell'>".$facturaciones[$rut_cliente][$serv_contratado]['mes']."-".$facturaciones[$rut_cliente][$serv_contratado]['anio']."</div>\n";
+>>>>>>> 16052615bcbda34153f7eed10fd873ae7bdc35ea
                         if( $facturaciones[$rut_cliente][$serv_contratado]['mes'] < $mes_act 
                             OR $facturaciones[$rut_cliente][$serv_contratado]['anio'] < $anio_act)
                             {

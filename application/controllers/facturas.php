@@ -73,7 +73,11 @@
             if($this->input->post())
             {
                 $rut_cli = $this->input->post('rut');
+<<<<<<< HEAD
                 $tipo_servicio = $this->input->post('servicio');
+=======
+                $servicio = $this->input->post('servicio');
+>>>>>>> 16052615bcbda34153f7eed10fd873ae7bdc35ea
                 $dia_emision = (int) date('d');
                 $mes_emision = (int) date('m');
                 $anio_emision = (int) date('Y');
@@ -93,6 +97,7 @@
                 {
                     $dia_venc = $dia_emision;
                 }
+<<<<<<< HEAD
                 //Cargamos el servicio
                 $this->load->model('servicio_model');
                 $servicio = $this->servicio_model->obtener_info_servicio($tipo_servicio);
@@ -121,6 +126,19 @@
                     $neto_fac = round($total_fac / 1.19);
                     $iva_fac = $total_fac - $neto_fac;
                 }
+=======
+
+                $this->load->model('tarifa_model');
+                $tarifa = $this->tarifa_model->_obtener_tarifa($rut_cli, $servicio);
+                $this->load->model('cliente_model');
+                $cliente = $this->cliente_model->obtener_info('rut', $rut_cli)[0];
+                $rango_valores = $cliente->rango_cobros;
+                $mind_rand = $tarifa - ($tarifa * $rango_valores);
+                $max_rand = $tarifa + ($tarifa * $rango_valores);
+                $total_fac = mt_rand($mind_rand, $max_rand);
+                $neto_fac = round($total_fac / 1.19);
+                $iva_fac = $total_fac - $neto_fac;
+>>>>>>> 16052615bcbda34153f7eed10fd873ae7bdc35ea
                 $datos_factura = array('dia_emision'    => $dia_emision,
                                         'mes_emision'   => $mes_emision,
                                         'anio_emision'  => $anio_emision,
@@ -130,9 +148,14 @@
                                         'neto'          => $neto_fac,
                                         'iva'           => $iva_fac,
                                         'total'         => $total_fac,
+<<<<<<< HEAD
                                         'tipo_servicio' => $tipo_servicio,
                                         'rut_cliente'   => $rut_cli,
                                         'exento'        => $monto_exento
+=======
+                                        'tipo_servicio' => $servicio,
+                                        'rut_cliente'   => $rut_cli
+>>>>>>> 16052615bcbda34153f7eed10fd873ae7bdc35ea
                                 );
                 $this->load->model('factura_model');
                 foreach($datos_factura as $campo => $valor)

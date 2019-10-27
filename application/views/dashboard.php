@@ -8,7 +8,10 @@
 src="https://code.jquery.com/jquery-3.3.1.min.js"
 integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
 crossorigin="anonymous"></script>
+<<<<<<< HEAD
 <script src="<?php echo base_url();?>public/js/jquery-3.4.0.js"></script>
+=======
+>>>>>>> 16052615bcbda34153f7eed10fd873ae7bdc35ea
 <title><?php echo $this->title; ?></title>
 <link rel="stylesheet" href="<?php echo base_url();?>public/css/theme.css">
 <link rel="shortcut icon" href="<?php echo base_url();?>public/favicon.ico">

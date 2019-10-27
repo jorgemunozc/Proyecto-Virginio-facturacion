@@ -57,6 +57,7 @@
             }
             return true;
         }
+<<<<<<< HEAD
 
         public function template($folio)
         {
@@ -71,5 +72,7 @@
             $pdf->writeHTML($html, true, false, true, false, '');
             $pdf->Output();
         }
+=======
+>>>>>>> 16052615bcbda34153f7eed10fd873ae7bdc35ea
     }
 ?>

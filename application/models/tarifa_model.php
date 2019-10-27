@@ -3,7 +3,10 @@
         public $cliente__rut;
         public $servicio__tipo_servicio;
         public $monto_tarifa;
+<<<<<<< HEAD
         public $rango_cobros;
+=======
+>>>>>>> 16052615bcbda34153f7eed10fd873ae7bdc35ea
 
         //SETTER & GETTER
         public function _set($property_name, $value)
@@ -21,8 +24,11 @@
                     case 'monto_tarifa':
                         $this->monto_tarifa = $value;
                         break;
+<<<<<<< HEAD
                     case 'rango_cobros':
                         $this->rango_cobros = $value/100;
+=======
+>>>>>>> 16052615bcbda34153f7eed10fd873ae7bdc35ea
                     default:
                         return 404;
                 }
@@ -42,8 +48,11 @@
                         return $this->servicio__tipo_servicio;
                     case 'monto_tarifa':
                         return $this->monto_tarifa;
+<<<<<<< HEAD
                     case 'rango_cobros':
                         return $this->rango_cobros;
+=======
+>>>>>>> 16052615bcbda34153f7eed10fd873ae7bdc35ea
                     default:
                         return NULL;
                 }
@@ -63,10 +72,13 @@
                 $this->db->where('cliente__rut', $this->_get('rut'));
                 $this->db->where('servicio__tipo_servicio', $this->_get('tipo_servicio'));
                 $this->db->set('monto_tarifa', $nuevo_monto);
+<<<<<<< HEAD
                 if ($this->rango_cobros != null)
                 {
                     $this->db->set('rango_cobros', $this->rango_cobros);
                 }
+=======
+>>>>>>> 16052615bcbda34153f7eed10fd873ae7bdc35ea
                 $this->db->update('tarifa');
                 return true;
             }
@@ -91,19 +103,32 @@
             return $query->result();
         }
 
+<<<<<<< HEAD
         public function _obtener_info_tarifa($rut, $servicio)
         {
             $query = $this->db->select('monto_tarifa, rango_cobros')
+=======
+        public function _obtener_tarifa($rut, $servicio)
+        {
+            $query = $this->db->select('monto_tarifa')
+>>>>>>> 16052615bcbda34153f7eed10fd873ae7bdc35ea
                                 ->where('cliente__rut', $rut)
                                 ->where('servicio__tipo_servicio', $servicio)
                                 ->get('tarifa');
             $result = $query->row();
             if( ! empty($result))
             {
+<<<<<<< HEAD
                 return $result;
             }else
             {
                 return null;
+=======
+                return $result->monto_tarifa;
+            }else
+            {
+                return -1;
+>>>>>>> 16052615bcbda34153f7eed10fd873ae7bdc35ea
             }
         }
 

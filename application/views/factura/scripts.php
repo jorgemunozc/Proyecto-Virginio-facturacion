@@ -13,9 +13,14 @@
                         if(data.status == 'success'){
                             var $url = "<?php echo base_url().'pdf/mostrar_factura/'?>" + data.folio;
                             var win = window.open($url, '_blank');
+<<<<<<< HEAD
                             // win.focus();
                             var clienteSeleccionado = $("#clientes-opt :selected").val();
                             $("#clientes-opt").load(window.location.href + "#clientes-opt");
+=======
+                            win.focus();
+                            location.reload();
+>>>>>>> 16052615bcbda34153f7eed10fd873ae7bdc35ea
                         }else{
                             alert(data.msg);
                         }

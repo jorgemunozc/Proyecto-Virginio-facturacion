@@ -31,5 +31,10 @@ user_guide_src/cilexer/pycilexer.egg-info/*
 /tests/results/
 
 
+<<<<<<< HEAD
 #Visual Studio Code files
 .editorconfig
+=======
+# Folders
+/public/images/
+>>>>>>> 16052615bcbda34153f7eed10fd873ae7bdc35ea

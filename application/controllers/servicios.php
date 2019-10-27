@@ -2,9 +2,12 @@
     defined('BASEPATH') OR exit('No permitido acceso directo al script.');
     class Servicios extends CI_Controller{
         public $title = 'Servicios';
+<<<<<<< HEAD
 
         private $campos = array('tipo_servicio', 'razon_social', 'rut', 'giro',
         'giro', 'direccion', 'comuna', 'fono', 'exento');
+=======
+>>>>>>> 16052615bcbda34153f7eed10fd873ae7bdc35ea
         
         public function __construct()
         {
@@ -24,15 +27,22 @@
         {
             $this->title = "Servicios | Nuevo Servicio";
             $this->load->view('dashboard');
+<<<<<<< HEAD
+=======
+            // $this->_listar_servicios();
+>>>>>>> 16052615bcbda34153f7eed10fd873ae7bdc35ea
             $this->load->view('servicio/servicio_form_view', array('msg' => ''));
             $this->load->view('servicio/scripts');
         }
 
         public function edit($servicio_enc)
         {
+<<<<<<< HEAD
             /*Decodificamos espacios y otros caracteres especiales en el nombre
             /* de un servicio.
             */
+=======
+>>>>>>> 16052615bcbda34153f7eed10fd873ae7bdc35ea
             $servicio_dec = rawurldecode($servicio_enc);
             $this->load->model('servicio_model');
             $info_servicio = $this->servicio_model->obtener_info_servicio($servicio_dec);
@@ -47,10 +57,16 @@
         {
             if($this->input->post())
             {   
+<<<<<<< HEAD
+=======
+                $campos = array('tipo_servicio', 'razon_social', 'rut', 'giro',
+                                'giro', 'direccion', 'comuna', 'fono');
+>>>>>>> 16052615bcbda34153f7eed10fd873ae7bdc35ea
                 $this->load->model('servicio_model');
                 if ($this->servicio_model->subir_logo('logo', $this->input->post('tipo_servicio')))
                 {
                     //Procesamiento de datos
+<<<<<<< HEAD
                     foreach ($this->campos as $campo)
                     {
                         if ($campo === "exento" && $this->input->post($campo) === null)
@@ -71,6 +87,22 @@
                             $data['status'] = 'error';
                             echo json_encode($data);
                             return;
+=======
+                    foreach ($campos as $campo)
+                    {
+                        $status = $this->servicio_model->_set($campo, $this->input->post($campo, true));
+                        if($status === 0)
+                        {   
+                            $data['msg'] = 'Campo o valor no asignados';
+                            $data['status'] = 'error';
+                            echo json_encode($data);
+                            
+                        }elseif($status === 404)
+                        {
+                            $data['msg'] = 'Campo: ${campo} no existe';
+                            $data['status'] = 'error';
+                            echo json_encode($data);
+>>>>>>> 16052615bcbda34153f7eed10fd873ae7bdc35ea
             
                         }
                     }
@@ -119,6 +151,7 @@
         {
             if($this->input->post())
             {
+<<<<<<< HEAD
                 $this->load->model('servicio_model');
                 foreach($this->campos as $campo)
                 {
@@ -132,11 +165,23 @@
                 }
                 // print_r($this->servicio_model);
                 // die();
+=======
+                $array_campos = array('rut', 'razon_social', 'direccion', 'giro', 'comuna', 'fono', 'tipo_servicio');
+                $this->load->model('servicio_model');
+                foreach($array_campos as $campo)
+                {
+                    $this->servicio_model->_set($campo, $this->input->post($campo, true));
+                }
+>>>>>>> 16052615bcbda34153f7eed10fd873ae7bdc35ea
                 try 
                 {
                     $this->servicio_model->actualizar_servicio($this->input->post('old_tipo_serv', true));
                     $data['status'] = 'success';
+<<<<<<< HEAD
                     $data['msg'] = 'Actualizado correctamente';
+=======
+                    $data['msg'] = 'Acutalizado correctamente';
+>>>>>>> 16052615bcbda34153f7eed10fd873ae7bdc35ea
                     echo json_encode($data);
                     return true;
                 } catch (Exception $e) 
@@ -187,6 +232,7 @@
             $this->load->model('servicio_model');
             $data['servicios'] = $this->servicio_model->obtener_servicios();
             $this->load->view('servicio/lista_servicios_view', $data);
+<<<<<<< HEAD
             $this->load->view('servicio/scripts');
         }
 
@@ -208,6 +254,9 @@
                 }
                 echo json_encode($data);
             }
+=======
+            // $this->load->view('servicio/scripts');
+>>>>>>> 16052615bcbda34153f7eed10fd873ae7bdc35ea
         }
 
     }

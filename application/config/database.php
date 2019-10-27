@@ -78,7 +78,11 @@ $db['default'] = array(
 	'hostname' => 'localhost',
 	'username' => 'root',
 	'password' => '',
+<<<<<<< HEAD
 	'database' => 'servicios',//servicios
+=======
+	'database' => 'test',//servicios
+>>>>>>> 16052615bcbda34153f7eed10fd873ae7bdc35ea
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,

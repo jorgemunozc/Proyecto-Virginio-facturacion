@@ -45,11 +45,15 @@
                 $rut = $this->input->post('rut', TRUE);
                 $servicio = $this->input->post('servicio', TRUE);
                 $monto_tarifa = $this->input->post('monto_tarifa', TRUE);
+<<<<<<< HEAD
                 $rango_cobros = $this->input->post('rango_cobros', TRUE);
+=======
+>>>>>>> 16052615bcbda34153f7eed10fd873ae7bdc35ea
                 $this->load->model('tarifa_model');
                 $this->tarifa_model->_set('rut', $rut);
                 $this->tarifa_model->_set('tipo_servicio', $servicio);
                 $this->tarifa_model->_set('monto_tarifa', $monto_tarifa);
+<<<<<<< HEAD
                 if ($rango_cobros != null)
                 {
                     $this->tarifa_model->_set('rango_cobros', $rango_cobros);
@@ -62,6 +66,16 @@
                             $data['status'] = 'success';
                             $data['msg'] = 'Tarifa actualizada';
                         } else
+=======
+                if($this->tarifa_model->existe_tarifa())
+                {
+                    try {
+                        if($this->tarifa_model->actualizar_tarifa($monto_tarifa))
+                        {
+                            $data['status'] = 'success';
+                            $data['msg'] = 'Tarifa actualizada';
+                        }else
+>>>>>>> 16052615bcbda34153f7eed10fd873ae7bdc35ea
                         {
                             $data['status'] = 'error';
                             $data['msg'] = 'No se pudo actualizar';
