@@ -103,7 +103,7 @@
                             echo json_encode($data);
                         }
                     } catch (Exception $e) {
-                        $data['msg'] = $e.message;
+                        $data['msg'] = $e->message;
                         $data['status'] = 'error';
                         echo json_encode($data);
                     }

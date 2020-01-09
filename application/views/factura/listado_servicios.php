@@ -1,6 +1,7 @@
 <?php
 $mes_act = date('m');
 $anio_act = date('Y');
+$url_action = base_url().'facturas/facturar';
 ?>
 
 <div class="lista-servicios">
@@ -38,6 +39,7 @@ $anio_act = date('Y');
                                 echo "\t<div class='table__cell'><a class='btn btn--small' href=''>Facturar</a></div>\n";
                             }
                     }
+                    $facturacion_perso = "<div class='table__cell'><form method='post' action='${url_action}'><input class='btn btn--small' type='submit'>Facturar otra fecha</class></form>";
                     echo "</div>";
                 }
             ?>
