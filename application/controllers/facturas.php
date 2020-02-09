@@ -74,24 +74,38 @@
             {
                 $rut_cli = $this->input->post('rut');
                 $tipo_servicio = $this->input->post('servicio');
-                $dia_emision = (int) date('d');
-                $mes_emision = (int) date('m');
-                $anio_emision = (int) date('Y');
-                if($mes_emision === 12)
-                {
-                    $mes_venc = 1;
-                    $anio_venc = $anio_emision + 1;
-                }else
-                {
-                    $mes_venc = $mes_emision + 1;
-                    $anio_venc = $anio_emision;
-                }
-                if($mes_venc === 2 && $dia_emision > 28)
-                {
-                    $dia_venc = 28;
-                }else
-                {
-                    $dia_venc = $dia_emision;
+                if (!is_null($this->input->post('fecha-emision'))) {
+                    $fecha_emision = $this->input->post('fecha-emision');
+                    $fecha = explode("/", $fecha_emision);
+                    /* Si el string de la fecha no se dividió asumimos que la fecha
+                     * viene en el formato dd-mm-aaaa, e intentamos dividirlo de nuevo
+                     */
+                    if (count($fecha) === 1) {
+                        $fecha = explode("-", $fecha_emision);
+                    }
+                    $dia_emision = (int) $fecha[0];
+                    $mes_emision = (int) $fecha[1];
+                    $anio_emision = (int) $fecha[2];
+                } else {
+                    $dia_emision = (int) date('d');
+                    $mes_emision = (int) date('m');
+                    $anio_emision = (int) date('Y');
+                    if($mes_emision === 12)
+                    {
+                        $mes_venc = 1;
+                        $anio_venc = $anio_emision + 1;
+                    }else
+                    {
+                        $mes_venc = $mes_emision + 1;
+                        $anio_venc = $anio_emision;
+                    }
+                    if($mes_venc === 2 && $dia_emision > 28)
+                    {
+                        $dia_venc = 28;
+                    }else
+                    {
+                        $dia_venc = $dia_emision;
+                    }
                 }
                 //Cargamos el servicio
                 $this->load->model('servicio_model');
