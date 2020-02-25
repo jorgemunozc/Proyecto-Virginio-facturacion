@@ -12,6 +12,7 @@ $url_action = base_url().'facturas/facturar';
             <div class="table__cell">Servicio</div>
             <div class="table__cell">Última facturación</div>
             <div class="table__cell"></div>
+            <div class="table__cell"></div>
         </div>
             <?php if(empty($servicios_cliente)):?>
         <div class="table__row">
@@ -40,6 +41,7 @@ $url_action = base_url().'facturas/facturar';
                             }
                     }
                     $facturacion_perso = "<div class='table__cell'><form method='post' action='${url_action}'><input class='btn btn--small' type='submit'>Facturar otra fecha</class></form>";
+                    echo $facturacion_perso;
                     echo "</div>";
                 }
             ?>
