@@ -17,6 +17,8 @@
         private $_meses = array('Ene', 'Feb', 'Mar', 'Abr',
                                 'May', 'Jun', 'Jul', 'Ago',
                                 'Sep', 'Oct', 'Nov', 'Dic');
+
+        private $_ERROR_DUPLICADO = 2;
         
         //SETTER & GETTER
         public function _set($property_name, $value)
@@ -97,6 +99,8 @@
                         return $this->total;
                     case 'folio':
                         return $this->folio;
+                    case 'ERROR_DUPLICADO':
+                        return $this->_ERROR_DUPLICADO;
                     default:
                         return 404;
                 }
@@ -106,6 +110,15 @@
         
         public function insertar_factura()
         {
+            $filtro = array('cliente__rut'               => $this->cliente__rut,
+                            'mes_emision'                => $this->mes_emision,
+                            'anio_emision'               => $this->anio_emision,
+                            'servicio__tipo_servicio'    => $this->servicio__tipo_servicio);
+            $query = $this->db->get_where('factura', $filtro);
+            $existeFactura = $query->num_rows() > 0;
+            if ($existeFactura){
+                throw new Exception("", $this->_ERROR_DUPLICADO);
+            }
             $this->db->insert('factura', $this);
             $this->folio = $this->db->insert_id();
         }

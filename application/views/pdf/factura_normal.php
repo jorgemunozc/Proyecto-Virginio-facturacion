@@ -200,7 +200,7 @@
     <img id="foto" src="" alt="Foto del PDF"> -->
     <!-- SCRIPTS -->
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.1/jspdf.debug.js" integrity="sha384-THVO/sM0mFD9h7dfSndI6TS0PgAGavwKvB5hAxRRvc0o9cPLohB0wb/PTA7LdUHs" crossorigin="anonymous"></script> -->
-    <script src="https://unpkg.com/jspdf@latest/dist/jspdf.min.js"></script>
+    <script src="https://unpkg.com/jspdf@1.5.2/dist/jspdf.min.js"></script>
     <script src="<?php echo base_url().'public/js/html2canvas.min.js'?>"></script>
     <script>
         $(document).ready(function(){

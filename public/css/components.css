@@ -1,5 +1,5 @@
-
 /* BUTTON STYLES */
+
 .btn {
     text-decoration: none;
     background-color: var(--primary-lighter);
@@ -55,6 +55,8 @@
 .btn--square {
     border-radius: 0;
 }
+
+
 /* END BUTTON STYLES */
 
 .leyenda {
@@ -65,4 +67,17 @@
 .required {
     color: red;
     font-size: .85rem;
+}
+
+.form-facturar {
+    display: flex;
+    flex-direction: row;
+}
+
+.form-facturar input {
+    border: 0;
+    outline: 1px solid rgba(0, 0, 0, .5);
+    outline-offset: -2px;
+    padding: 2px 5px;
+    line-height: 1.5;
 }

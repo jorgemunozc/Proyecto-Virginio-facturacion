@@ -129,7 +129,7 @@
                                 ->where('tipo_servicio', $servicio)
                                 ->update('servicio');
                 } catch (Exception $e) {
-                    echo $e.message;
+                    echo $e->message;
                     return false;
                 }
                 return true;

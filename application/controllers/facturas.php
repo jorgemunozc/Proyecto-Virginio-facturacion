@@ -90,22 +90,22 @@
                     $dia_emision = (int) date('d');
                     $mes_emision = (int) date('m');
                     $anio_emision = (int) date('Y');
-                    if($mes_emision === 12)
-                    {
-                        $mes_venc = 1;
-                        $anio_venc = $anio_emision + 1;
-                    }else
-                    {
-                        $mes_venc = $mes_emision + 1;
-                        $anio_venc = $anio_emision;
-                    }
-                    if($mes_venc === 2 && $dia_emision > 28)
-                    {
-                        $dia_venc = 28;
-                    }else
-                    {
-                        $dia_venc = $dia_emision;
-                    }
+                }
+                if($mes_emision === 12)
+                {
+                    $mes_venc = 1;
+                    $anio_venc = $anio_emision + 1;
+                }else
+                {
+                    $mes_venc = $mes_emision + 1;
+                    $anio_venc = $anio_emision;
+                }
+                if($mes_venc === 2 && $dia_emision > 28)
+                {
+                    $dia_venc = 28;
+                }else
+                {
+                    $dia_venc = $dia_emision;
                 }
                 //Cargamos el servicio
                 $this->load->model('servicio_model');
@@ -158,11 +158,13 @@
                     $this->factura_model->insertar_factura();
                     $data['status'] = 'success';
                     $data['folio'] = $this->factura_model->_get('folio');
+                    $data['fecha'] = str_pad($this->factura_model->_get('mes_emision'), 2, "0", STR_PAD_LEFT).'-'.$this->factura_model->_get('anio_emision');
+                    $data['servicio'] = $this->factura_model->_get('tipo_servicio');
                     echo json_encode($data);
                     return true;
                 } catch (Exception $e) {
                     $data['status'] = 'error';
-                    $data['msg'] = 'Hubo un error al facturar.';
+                    $data['msg'] = $e->getCode() == $this->factura_model->_get('ERROR_DUPLICADO') ? 'Ya se facturó este mes': 'Hubo un error al facturar.';
                     echo json_encode($data);
                     return false;
                 }                          
@@ -188,8 +190,8 @@
                                 ->where('servicio__tipo_servicio', $tipo_servicio)
                                 ->get('factura');
                 $result = $query->row();
-            } catch (Excepction $e) {
-                echo $e.message;
+            } catch (Exception $e) {
+                echo $e->message;
                 return array();
             }
             if(isset($result))

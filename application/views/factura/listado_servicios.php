@@ -1,6 +1,5 @@
 <?php
-$mes_act = date('m');
-$anio_act = date('Y');
+$fecha_act = new DateTime();
 $url_action = base_url().'facturas/facturar';
 ?>
 
@@ -23,24 +22,34 @@ $url_action = base_url().'facturas/facturar';
                 foreach($servicios_cliente as $serv_contratado)
                 {
                     echo "<div class='table__row' data-servicio='${serv_contratado}'>\n";
-                    echo "\t<div class='table__cell' data-servicio='${serv_contratado}'/>${serv_contratado}</div>\n";
+                    echo "\t<div class='table__cell' data-servicio='${serv_contratado}'>${serv_contratado}</div>\n";
                     if(empty($facturaciones[$rut_cliente][$serv_contratado]))
                     {
                         echo "\t<div class='table__cell'>Sin facturar aún</div>\n";
-                        echo "\t<div class='table__cell'><a class='btn btn--small' data-rut='${rut_cliente}' data-servicio='${serv_contratado}' href=''>Facturar</a></div>\n";
+                        echo "\t<div class='table__cell'><a class='btn btn--small btn-facturar' data-rut='${rut_cliente}' data-servicio='${serv_contratado}' href=''>Facturar</a></div>\n";
                     }else
                     {
                         printf("\t<div class='table__cell'>%02d-%4d</div>\n", $facturaciones[$rut_cliente][$serv_contratado]['mes'], $facturaciones[$rut_cliente][$serv_contratado]['anio']);
-                        if( $facturaciones[$rut_cliente][$serv_contratado]['mes'] < $mes_act 
-                            OR $facturaciones[$rut_cliente][$serv_contratado]['anio'] < $anio_act)
-                            {
-                                echo "\t<div class='table__cell'><a class='btn btn--small' data-rut='${rut_cliente}' data-servicio='${serv_contratado}' href=''>Facturar</a></div>\n";   
-                            }else
-                            {
-                                echo "\t<div class='table__cell'><a class='btn btn--small' href=''>Facturar</a></div>\n";
-                            }
+                        $mes_fac = $facturaciones[$rut_cliente][$serv_contratado]['mes'];
+                        $anio_fac = $facturaciones[$rut_cliente][$serv_contratado]['anio'];
+                        $fecha_fac = \DateTime::createFromFormat("m-Y", $mes_fac."-".$anio_fac);
+                        if($fecha_act->format("Y-m") > $fecha_fac->format("Y-m"))
+                        {
+                            // echo "<div fecha-actual='".$fecha_act->format("y-M")."' fecha-fac='".$fecha_fac->format('y-M')."'></div>";
+                            echo "\t<div class='table__cell'><a class='btn btn--small btn-facturar' data-rut='${rut_cliente}' data-servicio='${serv_contratado}' href=''>Facturar</a></div>\n";   
+                        }else
+                        {
+                            echo "\t<div class='table__cell'><div class='btn btn--small disabled'>Facturar</div></div>\n";
+                        }
                     }
-                    $facturacion_perso = "<div class='table__cell'><form method='post' action='${url_action}'><input class='btn btn--small' type='submit'>Facturar otra fecha</class></form>";
+                    $facturacion_perso = "<div class='table__cell'>
+                                            <form class='form-facturar' method='post' action='${url_action}'>
+                                                <input type='date' name='fecha-emision' required>
+                                                <input type='hidden' name='rut' value='${rut_cliente}'>
+                                                <input type='hidden' name='servicio' value='${serv_contratado}'>
+                                                <button class='btn btn--small btn-facturar-perso btn--square' type='submit' value='Facturar'>Facturar</button>
+                                            </form>
+                                        </div>\n";
                     echo $facturacion_perso;
                     echo "</div>";
                 }
