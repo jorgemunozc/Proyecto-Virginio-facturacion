@@ -79,7 +79,8 @@
 
         public function obtener_clientes()
         {
-            $query = $this->db->get('cliente');
+            $query = $this->db->order_by('razon_social', 'ASC')
+                            ->get('cliente');
             return $query->result();
         }
 
