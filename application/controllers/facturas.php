@@ -164,7 +164,7 @@
                     return true;
                 } catch (Exception $e) {
                     $data['status'] = 'error';
-                    $data['msg'] = $e->getCode() == $this->factura_model->_get('ERROR_DUPLICADO') ? 'Ya se facturó este mes': 'Hubo un error al facturar.';
+                    $data['msg'] = $e->getMessage();
                     echo json_encode($data);
                     return false;
                 }                          

@@ -109,7 +109,10 @@
 
         
         public function insertar_factura()
-        {
+        {	
+			if (!$this->esFechaValida()){
+				throw new Exception('Fecha no puede superar fecha actual.');
+			}
             $filtro = array('cliente__rut'               => $this->cliente__rut,
                             'mes_emision'                => $this->mes_emision,
                             'anio_emision'               => $this->anio_emision,
@@ -117,7 +120,7 @@
             $query = $this->db->get_where('factura', $filtro);
             $existeFactura = $query->num_rows() > 0;
             if ($existeFactura){
-                throw new Exception("", $this->_ERROR_DUPLICADO);
+                throw new Exception("Ya se facturó este mes", $this->_ERROR_DUPLICADO);
             }
             $this->db->insert('factura', $this);
             $this->folio = $this->db->insert_id();
@@ -139,5 +142,17 @@
                                 ->get('factura');
             return $query->result();
         }
+
+		public function esFechaValida() {
+			$fechaActual = getdate();
+			if ((int)$this->anio_emision > $fechaActual['year']) {
+				return false;
+			}
+			if ((int)$this->mes_emision > $fechaActual['mon']) {
+				return false;
+			}
+
+			return true;
+		}
     }
 ?>
