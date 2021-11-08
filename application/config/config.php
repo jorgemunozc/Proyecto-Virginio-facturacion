@@ -23,7 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://localhost/facturacion/';//'http://152.74.184.60/facturacionservicios/MVC';
+$config['base_url'] = 'http://localhost:8084/servicios';
 
 /*
 |--------------------------------------------------------------------------
